@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #f5f7fa;
+  --icon-color: #dadfe6;
+
+  --fire-color: #fe466d;
+
+  --x-color: #fd5068;
+  --star-color: #2db1ff;
+  --heart-color: #1be4a1;
+
+  font-size: 62.5%; /* 1rem = 10px */
+
+  --nav-height: 4rem;
+}
+body {
+  background: var(--primary-color);
+  height: 100vh;
+  width: 100%;
+
+  font-family: "Roboto", sans-serif;
+}
+
+/***** NAVBAR ******/
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 10px 0;
+  height: var(--nav-height);
+}
+
+.navbar i {
+  font-size: 2rem;
+  color: var(--icon-color);
+  transition: transform 500ms ease;
+}
+
+.navbar i:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.navbar i:nth-child(1) {
+  color: var(--fire-color);
+}
+
+/***** PHOTO  ******/
+
+.photo-and-actions {
+  height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo {
+  width: 98vw;
+  height: 85vh;
+  background: url("./img/pexels-simon-robben-977796.jpg") center center/cover;
+  border-radius: 1rem;
+  display: flex;
+  align-items: flex-end;
+  color: #eee;
+  box-shadow: 0 2px 10px 0 rgba(136, 136, 136, 0.77);
+}
+
+.photo-text {
+  padding: 2rem;
+  border-radius: 1rem;
+
+  background: rgb(2, 0, 36);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(35, 34, 65, 0) 0%,
+    rgba(0, 0, 0, 0.7) 52%
+  );
+}
+
+.photo-name-and-age {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.photo-name-and-age h2 {
+  font-size: 2.5rem;
+}
+
+.photo-name-and-age h2:nth-child(2) {
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+.photo-bio {
+  line-height: 2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+/***** ACTIONS ******/
+
+.actions {
+  flex: auto;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.action {
+  height: 6rem;
+  width: 6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  box-shadow: 0 2px 6px 0 rgba(112, 125, 134, 0.14);
+  border-radius: 50%;
+
+  font-size: 3rem;
+
+  transition: transform 500ms ease;
+}
+
+.action:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.actions .action:nth-child(1) {
+  color: var(--x-color);
+}
+
+.actions .action:nth-child(2) {
+  height: 4rem;
+  width: 4rem;
+  font-size: 2rem;
+  margin: 0 1rem;
+  color: var(--star-color);
+}
+
+.actions .action:nth-child(3) {
+  color: var(--heart-color);
+}
+
+/***** DESKTOP ******/
+/***** 1025px or more ******/
+@media (min-width: 1025px) {
+  .photo {
+    width: 36.7rem;
+    height: 68.4rem;
+  }
+
+  .actions {
+    flex: initial;
+  }
+
+  .photo-and-actions {
+    justify-content: center;
+  }
+
+  .navbar {
+    width: 40rem;
+    margin: auto;
+  }
+}
